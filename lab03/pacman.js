@@ -25,4 +25,31 @@ function createGame(n){
     return gameArray;
 }
 
+function moveLeft(game){
+    const pacmanIndex = game.indexOf("C");
+    if (pacmanIndex > 0){
+        game[i - 1] = "C";
+        game[i] = "";
+    }
+    else{
+        game[game.length - 1] = "C";
+        game[i] = "";
+    }
+    return game;
+}
+
+function moveRight(game){
+    //index of pacman
+    const i = game.indexOf("C");
+    if (pacmanIndex < game.length - 1){
+        game[i + 1] += game[i];
+        game[i] = "";
+    }
+    else{
+        game[0] = "C";
+        game[i] = "";
+    }
+    return game;
+}
+
 console.log(createGame(10));
