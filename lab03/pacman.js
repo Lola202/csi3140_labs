@@ -24,7 +24,10 @@ function createGame(n){
 
     var score = 0;
 
-    return gameArray;
+    return {
+        gameArray: gameArray,
+        score: 0
+    };
 }
 
 function moveLeft(game){
@@ -37,7 +40,7 @@ function moveLeft(game){
         game[game.length - 1] = "C";
         game[i] = "";
     }
-    score += 1;
+    game.score += 10;
     return game;
 }
 
@@ -52,8 +55,8 @@ function moveRight(game){
         game[0] = "C";
         game[i] = "";
     }
-    score += 1;
+    game.score += 10;
     return game;
 }
 
-console.log(createGame(10));
+console.log(moveRight([ ".", ".", ".", ".", "C", ".", ".", "@", ".", "^." ]));
